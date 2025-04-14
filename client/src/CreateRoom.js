@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
-import { useTheme } from '../../context/ThemeContext';
-=======
 import { useTheme } from '../context/ThemeContext';
->>>>>>> e5ae86dcc9229676b106e618f9b95164e7ebbed3
 import './CreateRoom.css';
 import { FaUsers, FaClock, FaPalette, FaArrowLeft } from 'react-icons/fa';
 
