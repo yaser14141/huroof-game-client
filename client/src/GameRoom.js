@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-<<<<<<< HEAD
-import { useTheme } from '../../context/ThemeContext';
-=======
-import { useTheme } from '../context/ThemeContext';
->>>>>>> e5ae86dcc9229676b106e618f9b95164e7ebbed3
-import HexagonCell from '../components/game/HexagonCell';
-import GameControls from '../components/game/GameControls';
+import { useTheme } from './context/ThemeContext';
+import HexagonCell from './components/game/HexagonCell';
+import GameControls from './components/game/GameControls';
 import './GameRoom.css';
 import { FaUsers, FaUserCog, FaRegClock, FaArrowLeft } from 'react-icons/fa';
 
