@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import { useTheme } from '../../context/ThemeContext';
-=======
 import { useTheme } from '../context/ThemeContext';
->>>>>>> e5ae86dcc9229676b106e618f9b95164e7ebbed3
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import './Lobby.css';
