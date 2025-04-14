@@ -1,0 +1,178 @@
+/* Lobby.css - تنسيقات صفحة اللوبي */
+
+.lobby-page {
+  padding: 30px 0;
+  min-height: calc(100vh - 200px);
+}
+
+.lobby-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.button-icon {
+  margin-left: 8px;
+}
+
+.lobby-card {
+  margin-bottom: 30px;
+}
+
+.rooms-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rooms-list {
+  margin-top: 20px;
+}
+
+.room-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease, border-color var(--transition-speed);
+}
+
+.room-item:last-child {
+  border-bottom: none;
+}
+
+.room-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='dark'] .room-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.room-info {
+  flex: 1;
+}
+
+.room-info h4 {
+  margin-bottom: 5px;
+  color: var(--primary-color);
+  transition: color var(--transition-speed);
+}
+
+.room-info p {
+  color: var(--text-color);
+  margin-bottom: 3px;
+  transition: color var(--transition-speed);
+}
+
+.room-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.room-status.available {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: var(--success-color);
+}
+
+.room-status.in-game {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--accent-color);
+}
+
+.room-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.join-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lobby-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.loading-text {
+  margin-top: 15px;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.empty-rooms {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-color);
+}
+
+.empty-rooms p {
+  margin-bottom: 10px;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  .lobby-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .header-actions {
+    width: 100%;
+  }
+  
+  .create-room-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .room-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .room-info {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .room-actions {
+    width: 100%;
+  }
+  
+  .join-button {
+    width: 100%;
+    text-align: center;
+  }
+}
