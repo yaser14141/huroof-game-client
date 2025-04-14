@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
-import SquareCell from '../components/game/SquareCell';
-import GameControls from '../components/game/GameControls';
+import { useTheme } from './context/ThemeContext';
+import SquareCell from './components/game/SquareCell';
+import GameControls from './components/game/GameControls';
 import './GameRoom.css';
 import { FaUsers, FaUserCog, FaRegClock, FaArrowLeft } from 'react-icons/fa';
 import { useGame } from '../context/GameContext';
