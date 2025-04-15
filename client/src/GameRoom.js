@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import GameGrid from './GameGrid';
-import GameControls from './components/game/GameControls';
+import GameControls from './GameControls';
 import { useTheme } from './context/ThemeContext';
 import { useUser } from './context/UserContext';
 import { useGame } from './context/GameContext';
