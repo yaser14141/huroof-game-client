@@ -506,6 +506,3 @@ const ControlButton = styled.button`
     font-size: 1.2rem;
   }
 `;
-
-  
-(Content truncated due to size limit. Use line ranges to read in chunks)
