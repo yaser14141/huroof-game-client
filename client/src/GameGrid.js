@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SquareCell from './SquareCell';
-import { useGame } from '../../context/GameContext';
+import { useGame } from './context/GameContext';
 
 const GameGrid = () => {
   const { cellStates, gameState } = useGame();
