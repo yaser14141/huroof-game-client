@@ -4,7 +4,6 @@ import { FaUsers, FaRandom, FaPlay, FaArrowLeft, FaComments } from 'react-icons/
 import { Link, useParams } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import RandomDua from './components/RandomDua';
 import GameGrid from './components/game/GameGrid';
 import GameControls from './components/game/GameControls';
 import { useTheme } from './context/ThemeContext';
@@ -69,7 +68,6 @@ const GameRoom = () => {
       <main className="container">
         {!gameState || gameState === 'waiting' || gameState === 'distributing' ? (
           <>
-            <RandomDua />
             
             <RoomSection>
               <BackLink to="/lobby">
