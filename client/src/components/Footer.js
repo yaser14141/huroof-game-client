@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaInstagram, FaYoutube, FaTwitch, FaTiktok } from 'react-icons/fa';
-import { useTheme } from './context/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 
 const Footer = () => {
   const { theme } = useTheme();
