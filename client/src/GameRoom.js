@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaUsers, FaRandom, FaPlay, FaArrowLeft, FaComments } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
-import RandomDua from '../components/layout/RandomDua';
-import GameGrid from '../components/game/GameGrid';
-import GameControls from '../components/game/GameControls';
-import { useTheme } from '../context/ThemeContext';
-import { useUser } from '../context/UserContext';
-import { useGame } from '../context/GameContext';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import RandomDua from './components/layout/RandomDua';
+import GameGrid from './components/game/GameGrid';
+import GameControls from './components/game/GameControls';
+import { useTheme } from './context/ThemeContext';
+import { useUser } from './context/UserContext';
+import { useGame } from './context/GameContext';
 
 const GameRoom = () => {
   const { theme } = useTheme();
