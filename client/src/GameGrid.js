@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SquareCell from './components/SquareCell';
 import { useGame } from './context/GameContext';
 
 const GameGrid = () => {
   const { cellStates, gameState } = useGame();
-  
+  const [selectedTeam, setSelectedTeam] = useState(null);
+
   // تحويل حالة الخلايا إلى مصفوفة ثنائية الأبعاد
   const gridSize = 5; // حجم الشبكة 5×5
   const grid = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
-  
+
   // ملء المصفوفة بالخلايا
   Object.entries(cellStates).forEach(([cellId, cellData]) => {
     const [row, col] = cellId.split('-').map(Number);
@@ -17,29 +18,45 @@ const GameGrid = () => {
       grid[row][col] = cellData;
     }
   });
-  
+
+  const handleCellClick = (rowIndex, colIndex) => {
+    if (selectedTeam !== null) {
+      const cellKey = `${rowIndex}-${colIndex}`;
+      const currentCell = cellStates[cellKey];
+      if (currentCell) {
+        currentCell.team = selectedTeam;
+      }
+    }
+  };
+
   return (
-    <GridContainer>
-      {grid.map((row, rowIndex) => (
-        <GridRow key={`row-${rowIndex}`}>
-          {row.map((cell, colIndex) => (
-            <GridCell key={`cell-${rowIndex}-${colIndex}`}>
-              {cell ? (
-                <SquareCell
-                  letter={cell.letter}
-                  team={cell.team}
-                  highlighted={cell.highlighted}
-                  edges={cell.edges}
-                  onClick={() => console.log(`Clicked cell ${rowIndex}-${colIndex}`)}
-                />
-              ) : (
-                <EmptyCell />
-              )}
-            </GridCell>
-          ))}
-        </GridRow>
-      ))}
-    </GridContainer>
+    <>
+      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '1rem' }}>
+        <button onClick={() => setSelectedTeam(1)}>🎨 فريق 1</button>
+        <button onClick={() => setSelectedTeam(2)}>🎨 فريق 2</button>
+      </div>
+      <GridContainer>
+        {grid.map((row, rowIndex) => (
+          <GridRow key={`row-${rowIndex}`}>
+            {row.map((cell, colIndex) => (
+              <GridCell key={`cell-${rowIndex}-${colIndex}`}>
+                {cell ? (
+                  <SquareCell
+                    letter={cell.letter}
+                    team={cell.team}
+                    highlighted={cell.highlighted}
+                    edges={cell.edges}
+                    onClick={() => handleCellClick(rowIndex, colIndex)}
+                  />
+                ) : (
+                  <EmptyCell />
+                )}
+              </GridCell>
+            ))}
+          </GridRow>
+        ))}
+      </GridContainer>
+    </>
   );
 };
 
