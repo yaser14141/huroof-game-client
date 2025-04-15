@@ -4,7 +4,6 @@ import { FaSearch, FaPlus, FaKey } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import RandomDua from './components/RandomDua';
 import { useTheme } from './context/ThemeContext';
 
 const Lobby = () => {
@@ -32,7 +31,6 @@ const Lobby = () => {
     <PageContainer>
       <Header />
       <main className="container">
-        <RandomDua />
         
         <LobbySection>
           <LobbyTitle>اللوبي</LobbyTitle>
