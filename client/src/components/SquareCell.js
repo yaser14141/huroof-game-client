@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from './context/ThemeContext';
 
 const SquareCell = ({ letter, team, onClick, highlighted, edges }) => {
   const { theme } = useTheme();
