@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaSearch, FaPlus, FaKey } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
-import RandomDua from '../components/layout/RandomDua';
-import { useTheme } from '../context/ThemeContext';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import RandomDua from './components/layout/RandomDua';
+import { useTheme } from './context/ThemeContext';
 
 const Lobby = () => {
   const { theme } = useTheme();
