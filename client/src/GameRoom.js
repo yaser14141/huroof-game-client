@@ -506,3 +506,5 @@ const ControlButton = styled.button`
     font-size: 1.2rem;
   }
 `;
+
+export default GameRoom;
