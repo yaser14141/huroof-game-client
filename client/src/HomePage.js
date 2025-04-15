@@ -4,7 +4,7 @@ import { FaUsers, FaGamepad, FaInfoCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import RandomDua from './components/RandomDua';
+import  from './components/';
 import { useTheme } from './context/ThemeContext';
 
 const HomePage = () => {
@@ -14,7 +14,6 @@ const HomePage = () => {
     <PageContainer>
       <Header />
       <main className="container">
-        <RandomDua />
         
         <HeroSection>
           <HeroTitle>حروف مع ياسر</HeroTitle>
