@@ -4,7 +4,6 @@ import { FaUser, FaEnvelope, FaLock, FaSave } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import RandomDua from './components/RandomDua';
 import { useTheme } from './context/ThemeContext';
 import { useUser } from './context/UserContext';
 
@@ -83,7 +82,6 @@ const UserSettings = () => {
     <PageContainer>
       <Header />
       <main className="container">
-        <RandomDua />
         
         <SettingsSection>
           <SectionTitle>إعدادات الحساب</SectionTitle>
