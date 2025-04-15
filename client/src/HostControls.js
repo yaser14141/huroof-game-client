@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaPlay, FaPause, FaRedo, FaStopwatch, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
-import { useGame } from '../context/GameContext';
+import { useGame } from './context/GameContext';
 
 const HostControls = () => {
   const { gameState, startGame, pauseGame, resumeGame, resetGame } = useGame();
