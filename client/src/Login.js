@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaUser, FaLock, FaEnvelope, FaSignInAlt } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
-import RandomDua from '../components/layout/RandomDua';
-import { useTheme } from '../context/ThemeContext';
-import { useUser } from '../context/UserContext';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import RandomDua from './components/layout/RandomDua';
+import { useTheme } from './context/ThemeContext';
+import { useUser } from './context/UserContext';
 
 const Login = () => {
   const { theme } = useTheme();
