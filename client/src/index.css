@@ -1,0 +1,239 @@
+:root {
+  /* الألوان الأساسية - الوضع الفاتح */
+  --primary-color: #3498db;
+  --secondary-color: #e74c3c;
+  --accent-color: #f39c12;
+  --background-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --border-color: #dddddd;
+  
+  /* ألوان الفرق */
+  --team1-color: #e74c3c;
+  --team2-color: #3498db;
+  
+  /* ألوان الخلايا */
+  --cell-bg: #ffffff;
+  --cell-border: #dddddd;
+  --cell-text: #333333;
+  
+  /* ألوان العناصر التفاعلية */
+  --button-primary: #3498db;
+  --button-secondary: #e74c3c;
+  --button-success: #2ecc71;
+  --button-warning: #f39c12;
+  --button-danger: #e74c3c;
+  --button-text: #ffffff;
+  
+  /* الظلال والتأثيرات */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  
+  /* المسافات والحدود */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* سرعة الانتقالات */
+  --transition-speed: 0.3s;
+}
+
+/* الوضع المظلم */
+[data-theme='dark'] {
+  --primary-color: #2980b9;
+  --secondary-color: #c0392b;
+  --accent-color: #d35400;
+  --background-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #f8f9fa;
+  --text-secondary: #aaaaaa;
+  --border-color: #333333;
+  
+  /* ألوان الخلايا */
+  --cell-bg: #2c2c2c;
+  --cell-border: #444444;
+  --cell-text: #f8f9fa;
+  
+  /* ألوان العناصر التفاعلية */
+  --button-primary: #2980b9;
+  --button-secondary: #c0392b;
+  --button-success: #27ae60;
+  --button-warning: #d35400;
+  --button-danger: #c0392b;
+  
+  /* الظلال والتأثيرات */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  direction: rtl;
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-weight: bold;
+  transition: all var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--button-primary);
+  color: var(--button-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--button-secondary);
+  color: var(--button-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-success {
+  background-color: var(--button-success);
+  color: var(--button-text);
+}
+
+.btn-success:hover {
+  background-color: var(--button-success);
+  box-shadow: var(--shadow-md);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  transition: border-color var(--transition-speed), background-color var(--transition-speed);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+.p-5 { padding: var(--spacing-xl); }
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --spacing-md: 12px;
+    --spacing-lg: 18px;
+    --spacing-xl: 24px;
+  }
+}
