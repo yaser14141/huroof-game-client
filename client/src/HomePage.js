@@ -4,7 +4,7 @@ import { FaUsers, FaGamepad, FaInfoCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import  from './components/';
+import SquareCell from './components/SquareCell';
 import { useTheme } from './context/ThemeContext';
 
 const HomePage = () => {
