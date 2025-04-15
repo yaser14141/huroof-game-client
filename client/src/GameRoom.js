@@ -486,6 +486,6 @@ const HostControls = styled.div`
 
 const ControlButton = styled.button`
   display: flex;
-  align-items: center;
+  align-items: center`;
   
 (Content truncated due to size limit. Use line ranges to read in chunks)
