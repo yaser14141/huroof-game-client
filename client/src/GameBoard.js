@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SquareCell from './SquareCell';
-import { useGame } from '../../context/GameContext';
-import { useTheme } from '../../context/ThemeContext';
+import { useGame } from './context/GameContext';
+import { useTheme } from './context/ThemeContext';
 
 const GameBoard = () => {
   const { cellStates, gameState, currentQuestion, teamColors } = useGame();
