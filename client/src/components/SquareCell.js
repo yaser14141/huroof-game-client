@@ -21,7 +21,7 @@ const SquareCell = ({ letter, team, onClick, highlighted, edges }) => {
             <EdgeLeft team={edges.left.team} connected={edges.left.connected} />
           </>
         )}
-        
+
         {/* محتوى الخلية */}
         <CellContent>
           <Letter>{letter}</Letter>
@@ -38,7 +38,7 @@ const CellContainer = styled.div`
   padding-top: 100%; /* نسبة 1:1 للمربع */
   cursor: pointer;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.05);
     z-index: 10;
@@ -54,25 +54,22 @@ const Cell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${props => 
-    props.team === 1 ? 'var(--team1-color)' : 
-    props.team === 2 ? 'var(--team2-color)' : 
-    'var(--cell-bg)'
-  };
-  border: 2px solid ${props => 
-    props.team === 1 ? 'var(--team1-color)' : 
-    props.team === 2 ? 'var(--team2-color)' : 
-    'var(--cell-border)'
-  };
-  box-shadow: ${props => 
-    props.highlighted ? '0 0 15px rgba(255, 215, 0, 0.6)' : 
-    props.team === 1 ? '0 0 10px rgba(231, 76, 60, 0.5)' : 
-    props.team === 2 ? '0 0 10px rgba(52, 152, 219, 0.5)' : 
-    'none'
-  };
+  background-color: var(--cell-bg);
+  border: 4px solid
+    ${props =>
+      props.team === 1
+        ? 'var(--team1-color)'
+        : props.team === 2
+        ? 'var(--team2-color)'
+        : 'var(--cell-border)'};
+  box-shadow:
+    ${props =>
+      props.highlighted
+        ? '0 0 15px rgba(255, 215, 0, 0.6)'
+        : 'none'};
   transition: all 0.3s ease;
-  animation: ${props => props.highlighted ? 'pulse-highlight 1.5s infinite' : 'none'};
-  
+  animation: ${props => (props.highlighted ? 'pulse-highlight 1.5s infinite' : 'none')};
+
   @keyframes pulse-highlight {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -99,12 +96,13 @@ const Letter = styled.span`
 // مكونات حواف الخلية
 const Edge = styled.div`
   position: absolute;
-  background-color: ${props => 
-    props.team === 1 ? 'var(--team1-color)' : 
-    props.team === 2 ? 'var(--team2-color)' : 
-    'transparent'
-  };
-  display: ${props => props.connected ? 'block' : 'none'};
+  background-color: ${props =>
+    props.team === 1
+      ? 'var(--team1-color)'
+      : props.team === 2
+      ? 'var(--team2-color)'
+      : 'transparent'};
+  display: ${props => (props.connected ? 'block' : 'none')};
   transition: background-color 0.3s ease;
   z-index: 1;
 `;
