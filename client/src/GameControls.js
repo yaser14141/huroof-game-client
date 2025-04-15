@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaPlay, FaRedo, FaCheck, FaTimes } from 'react-icons/fa';
-import { useGame } from '../../context/GameContext';
+import { useGame } from './context/GameContext';
 
 const GameControls = () => {
   const { gameState, teamColors } = useGame();
