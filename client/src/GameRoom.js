@@ -507,4 +507,111 @@ const ControlButton = styled.button`
   }
 `;
 
+const ChatSection = styled.section`
+  margin-top: var(--spacing-md);
+`;
+
+const ChatMessages = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+`;
+
+const ChatMessage = styled.div`
+  background-color: ${props => props.system ? 'var(--border-color)' : 'var(--card-bg)'};
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-weight: ${props => props.system ? 'bold' : 'normal'};
+  color: ${props => props.system ? 'var(--primary-color)' : 'var(--text-color)'};
+`;
+
+const ChatForm = styled.form`
+  display: flex;
+  gap: var(--spacing-sm);
+`;
+
+const ChatInput = styled.input`
+  flex: 1;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+`;
+
+const ChatSubmit = styled.button`
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+`;
+
+const GameSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+`;
+
+const GameHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const GameTitle = styled.h2`
+  font-size: 1.8rem;
+  color: var(--primary-color);
+`;
+
+const GameInfo = styled.div`
+  display: flex;
+  gap: var(--spacing-md);
+`;
+
+const GameInfoItem = styled.div`
+  color: var(--text-secondary);
+  font-weight: 500;
+`;
+
+const PlayerControls = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+`;
+
+const AnswerButton = styled.button`
+  background-color: var(--button-success);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+
+  &:hover {
+    background-color: var(--success-dark);
+  }
+`;
+
+const CountdownOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+`;
+
+const CountdownNumber = styled.div`
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+`;
+
 export default GameRoom;
