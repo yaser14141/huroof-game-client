@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaMoon, FaSun, FaUser } from 'react-icons/fa';
-import { useTheme } from './context/ThemeContext';
-import { useUser } from './context/UserContext';
+import { useTheme } from '../context/ThemeContext';
+import { useUser } from '../context/UserContext';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
