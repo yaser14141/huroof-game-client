@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SquareCell from './SquareCell';
+import SquareCell from './components/SquareCell';
 import { useGame } from './context/GameContext';
 
 const GameGrid = () => {
