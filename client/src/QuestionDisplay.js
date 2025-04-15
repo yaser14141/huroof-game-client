@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaCheck, FaTimes, FaLightbulb, FaHourglassHalf } from 'react-icons/fa';
-import { useGame } from '../../context/GameContext';
-import { useUser } from '../../context/UserContext';
+import { useGame } from '../context/GameContext';
+import { useUser } from '../context/UserContext';
 
 const QuestionDisplay = () => {
   const { currentQuestion, answerQuestion } = useGame();
