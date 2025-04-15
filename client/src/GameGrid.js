@@ -6,6 +6,7 @@ import { useGame } from './context/GameContext';
 const GameGrid = () => {
   const { cellStates, gameState } = useGame();
   const [selectedTeam, setSelectedTeam] = useState(null);
+  const [answerTime, setAnswerTime] = useState(10); // الوقت الافتراضي للإجابة
 
   // تحويل حالة الخلايا إلى مصفوفة ثنائية الأبعاد
   const gridSize = 5; // حجم الشبكة 5×5
@@ -29,12 +30,32 @@ const GameGrid = () => {
     }
   };
 
+  const handleAnswerTimeChange = (e) => {
+    const value = parseInt(e.target.value);
+    if (!isNaN(value) && value >= 1 && value <= 30) {
+      setAnswerTime(value);
+    }
+  };
+
   return (
     <>
-      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '1rem' }}>
-        <button onClick={() => setSelectedTeam(1)}>🎨 فريق 1</button>
-        <button onClick={() => setSelectedTeam(2)}>🎨 فريق 2</button>
-      </div>
+      <ControlsPanel>
+        <TeamButtons>
+          <button onClick={() => setSelectedTeam(1)}>🎨 فريق 1</button>
+          <button onClick={() => setSelectedTeam(2)}>🎨 فريق 2</button>
+        </TeamButtons>
+        <TimeControl>
+          <label>⏱ وقت الإجابة (بالثواني):</label>
+          <input 
+            type="number" 
+            value={answerTime} 
+            onChange={handleAnswerTimeChange} 
+            min="1" 
+            max="30"
+          />
+        </TimeControl>
+      </ControlsPanel>
+
       <GridContainer>
         {grid.map((row, rowIndex) => (
           <GridRow key={`row-${rowIndex}`}>
@@ -59,6 +80,29 @@ const GameGrid = () => {
     </>
   );
 };
+
+const ControlsPanel = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const TeamButtons = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const TimeControl = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  input {
+    width: 60px;
+    padding: 4px;
+  }
+`;
 
 const GridContainer = styled.div`
   display: flex;
