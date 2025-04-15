@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ThemeProvider } from './context/ThemeContext';
 import { UserProvider } from './context/UserContext';
 import { GameProvider } from './context/GameContext';
-import HomePage from './pages/HomePage';
-import Login from './pages/Login';
-import UserSettings from './pages/UserSettings';
-import Lobby from './pages/Lobby';
-import CreateRoom from './pages/CreateRoom';
-import GameRoom from './pages/GameRoom';
+import HomePage from './HomePage';
+import Login from './Login';
+import UserSettings from './UserSettings';
+import Lobby from './Lobby';
+import CreateRoom from './CreateRoom';
+import GameRoom from './GameRoom';
 
 // مكون للتحقق من تسجيل الدخول
 const PrivateRoute = ({ children }) => {
