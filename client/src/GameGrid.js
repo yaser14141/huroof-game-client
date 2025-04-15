@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SquareCell from './components/SquareCell';
 import { useGame } from './context/GameContext';
+import { useSocket } from './context/SocketContext';
 
 const GameGrid = () => {
-  const { cellStates, gameState } = useGame();
+  const { cellStates, setCellStates, gameState, roomId } = useGame();
+  const socket = useSocket();
   const [selectedTeam, setSelectedTeam] = useState(null);
-  const [answerTime, setAnswerTime] = useState(10); // الوقت الافتراضي للإجابة
+  const [answerTime, setAnswerTime] = useState(10);
 
-  // تحويل حالة الخلايا إلى مصفوفة ثنائية الأبعاد
-  const gridSize = 5; // حجم الشبكة 5×5
+  const gridSize = 5;
   const grid = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 
-  // ملء المصفوفة بالخلايا
   Object.entries(cellStates).forEach(([cellId, cellData]) => {
     const [row, col] = cellId.split('-').map(Number);
     if (row >= 0 && row < gridSize && col >= 0 && col < gridSize) {
@@ -21,12 +21,13 @@ const GameGrid = () => {
   });
 
   const handleCellClick = (rowIndex, colIndex) => {
-    if (selectedTeam !== null) {
+    if (selectedTeam !== null && roomId) {
       const cellKey = `${rowIndex}-${colIndex}`;
-      const currentCell = cellStates[cellKey];
-      if (currentCell) {
-        currentCell.team = selectedTeam;
-      }
+      socket.emit('cell:update', {
+        roomId,
+        cellId: cellKey,
+        team: selectedTeam
+      });
     }
   };
 
@@ -36,6 +37,22 @@ const GameGrid = () => {
       setAnswerTime(value);
     }
   };
+
+  useEffect(() => {
+    if (!socket) return;
+    socket.on('cell:updated', ({ cellId, team }) => {
+      setCellStates(prev => ({
+        ...prev,
+        [cellId]: {
+          ...prev[cellId],
+          team
+        }
+      }));
+    });
+    return () => {
+      socket.off('cell:updated');
+    };
+  }, [socket, setCellStates]);
 
   return (
     <>
