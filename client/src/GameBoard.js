@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import SquareCell from './SquareCell';
+import SquareCell from './components/SquareCell';
 import { useGame } from './context/GameContext';
 import { useTheme } from './context/ThemeContext';
 
