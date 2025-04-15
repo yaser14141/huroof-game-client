@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaVolumeUp, FaVolumeMute, FaComments, FaUsers, FaGamepad } from 'react-icons/fa';
-import { useGame } from '../context/GameContext';
+import { useGame } from './context/GameContext';
 
 const GameSettings = () => {
   const { updateTeamColors, teamColors } = useGame();
