@@ -4,7 +4,6 @@ import { FaUsers, FaLock, FaGlobe, FaKey, FaArrowLeft } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import RandomDua from './components/RandomDua';
 import { useTheme } from './context/ThemeContext';
 import { useUser } from './context/UserContext';
 import { useGame } from './context/GameContext';
@@ -51,7 +50,6 @@ const CreateRoom = () => {
     <PageContainer>
       <Header />
       <main className="container">
-        <RandomDua />
         
         <CreateRoomSection>
           <BackLink to="/lobby">
