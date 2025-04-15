@@ -490,21 +490,22 @@ const ControlButton = styled.button`
   gap: var(--spacing-sm);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius-md);
-  font-weight: 600;
-  font-size: 0.9rem;
   background-color: ${props => props.primary ? 'var(--primary-color)' : 'var(--button-secondary)'};
   color: white;
   border: none;
   cursor: pointer;
-  transition: background-color var(--transition-speed);
-  
-  svg {
-    font-size: 1rem;
-  }
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-speed);
 
   &:hover {
-    background-color: ${props => props.primary ? 'var(--secondary-color)' : 'var(--primary-color)'};
+    background-color: ${props => props.primary ? 'var(--primary-dark)' : 'var(--secondary-color)'};
+  }
+
+  svg {
+    font-size: 1.2rem;
   }
 `;
+
   
 (Content truncated due to size limit. Use line ranges to read in chunks)
