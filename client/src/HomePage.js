@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaUsers, FaGamepad, FaInfoCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import RandomDua from './components/layout/RandomDua';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import RandomDua from './components/RandomDua';
 import { useTheme } from './context/ThemeContext';
 
 const HomePage = () => {
